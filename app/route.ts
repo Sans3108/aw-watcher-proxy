@@ -21,5 +21,12 @@ export async function GET(request: Request) {
 
   const data = await malData.json();
 
-  return Response.json(data);
+  const headers = new Headers({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'chrome-extension://pkffcfjbnbhnbbgfeoanckhcnbpfobim',
+    'Access-Control-Allow-Methods': 'GET',
+    'Access-Control-Allow-Headers': 'Content-Type, X-MAL-CLIENT-ID'
+  });
+
+  return Response.json(data, { status: 200, headers });
 }
