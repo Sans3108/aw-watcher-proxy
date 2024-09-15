@@ -3,7 +3,7 @@ const nextConfig = {
   headers() {
     return [
       {
-        source: '/',
+        source: '/(.*)',
         headers: [{ key: 'Access-Control-Allow-Origin', value: 'chrome-extension://pkffcfjbnbhnbbgfeoanckhcnbpfobim' }]
       }
     ];
